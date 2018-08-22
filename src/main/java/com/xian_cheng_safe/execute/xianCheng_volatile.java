@@ -1,9 +1,7 @@
-package com.xian_cheng_safe;
+package com.xian_cheng_safe.execute;
 
 import java.util.Vector;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -18,7 +16,6 @@ public class xianCheng_volatile {
     //static volatile int count = 0;
     //static int count = 0;
     static AtomicInteger count = new AtomicInteger(0);
-
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         final CountDownLatch countDownLatch = new CountDownLatch(50);
@@ -29,6 +26,7 @@ public class xianCheng_volatile {
                         //Thread.sleep(500l);
                         //count++;
                         int get = count.incrementAndGet();
+                        int j = 1/0;
                         System.out.println(get);
                         countDownLatch.countDown();
                     }catch (Exception e){
@@ -37,7 +35,6 @@ public class xianCheng_volatile {
                 }
             });
         }
-
         try {
             countDownLatch.await();
             System.out.println("最终：：：count======"+count);

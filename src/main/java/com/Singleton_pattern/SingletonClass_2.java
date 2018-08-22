@@ -3,7 +3,7 @@ package com.Singleton_pattern;
 /**
  * @author jiabing
  * @Package com.Singleton_pattern
- * @Description: 饱汉式
+ * @Description: 饱汉式  线程不安全
  * @date 2018/8/17 13:24
  */
 public class SingletonClass_2 {

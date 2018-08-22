@@ -3,7 +3,7 @@ package com.Singleton_pattern;
 /**
  * @author jiabing
  * @Package com.Singleton_pattern
- * @Description: 双重检验锁
+ * @Description: 双重检验锁  推荐
  * @date 2018/8/17 13:41
  */
 public class SingletonClass_4 {
