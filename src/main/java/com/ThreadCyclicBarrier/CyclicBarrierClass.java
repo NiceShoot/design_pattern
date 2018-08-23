@@ -26,7 +26,7 @@ public class CyclicBarrierClass {
      * @param executorService
      */
     private static void CyclicBarrierTest(ExecutorService executorService) {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(2,new Task_2());
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5,new Task_2());
         for(int i=0;i<10;i++){
             final int a = i;
             try {

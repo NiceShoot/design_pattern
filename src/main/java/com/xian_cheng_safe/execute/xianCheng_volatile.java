@@ -13,21 +13,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class xianCheng_volatile {
 
 
-    //static volatile int count = 0;
+    static volatile int count = 0;
     //static int count = 0;
-    static AtomicInteger count = new AtomicInteger(0);
+    //static AtomicInteger count = new AtomicInteger(0);
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         final CountDownLatch countDownLatch = new CountDownLatch(50);
         for(int i=0;i<50;i++){
+            final int a = i;
             executorService.execute(new Runnable() {
                 public void run() {
                     try {
                         //Thread.sleep(500l);
                         //count++;
-                        int get = count.incrementAndGet();
-                        int j = 1/0;
-                        System.out.println(get);
+                        //int get = count.incrementAndGet();
+                        count = 100+a;
+                        System.out.println(count);
                         countDownLatch.countDown();
                     }catch (Exception e){
                         e.printStackTrace();
