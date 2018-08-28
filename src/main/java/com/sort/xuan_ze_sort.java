@@ -14,7 +14,7 @@ public class xuan_ze_sort {
         //初始数组
         int[] arr = {2,5,3,1,9,6,4,8,7,0};
         //排序
-        for(int i=0;i<arr.length;i++){
+        for(int i=0;i<arr.length-1;i++){
             //假定 最小的值 的索引下标为  i
             int min = i;
             for(int j=i+1;j<arr.length;j++){
