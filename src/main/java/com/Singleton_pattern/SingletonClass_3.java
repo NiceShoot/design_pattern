@@ -23,6 +23,8 @@ public class SingletonClass_3 {
         if(singletonClass_3 == null){
             singletonClass_3 = new SingletonClass_3();
         }
+        StringBuilder stringBuilder = new StringBuilder("");//不安全
+        StringBuffer stringBuffer = new StringBuffer("");//安全
         return singletonClass_3;
     }
 
