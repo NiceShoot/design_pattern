@@ -9,11 +9,36 @@ package com.xian_cheng_lock;
 public class thread_join {
 
     public static void main(String[] args) throws InterruptedException {
-        ThreadJoinTest thread_1 = new ThreadJoinTest("小明");
-        ThreadJoinTest thread_2 = new ThreadJoinTest("小红");
-        thread_1.start();
-        thread_1.join();
-        thread_2.start();
+//        ThreadJoinTest thread_1 = new ThreadJoinTest("小明");
+//        ThreadJoinTest thread_2 = new ThreadJoinTest("小红");
+//        thread_1.start();
+//        thread_1.join();
+//        thread_2.start();
+
+
+
+        Thread t_1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("A");
+            }
+        });
+        Thread t_2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("B");
+            }
+        });
+        Thread t_3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("C");
+            }
+        });
+
+        t_1.start();t_1.join();
+        t_2.start();t_2.join();
+        t_3.start();
     }
 
 }
